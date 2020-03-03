@@ -284,9 +284,9 @@ class DQNAgent:
 
         if not self.save_weights_file_path:
             return
-        beh_save_file_path = re.sub(r'\.h5', r'_beh.h5', self.save_weights_file_path)
+        beh_save_file_path = self.load_weights_file_path + "model_beh.h5"
         self.beh_model.save_weights(beh_save_file_path)
-        tar_save_file_path = re.sub(r'\.h5', r'_tar.h5', self.save_weights_file_path)
+        tar_save_file_path = self.load_weights_file_path + "model_tar.h5"
         self.tar_model.save_weights(tar_save_file_path)
 
     def _load_weights(self):
